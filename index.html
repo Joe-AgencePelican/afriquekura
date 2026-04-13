@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Afrique Cura — Cuisine Africaine Authentique • Paris 19e</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2 { font-family: 'Playfair Display', serif; }
+    .hero-bg {
+      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+    }
+    .section-title {
+      position: relative;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 3px;
+      background: #d97706;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+<body class="bg-zinc-950 text-white overflow-x-hidden">
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 w-full bg-zinc-950/90 backdrop-blur-md z-50 border-b border-amber-900">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <i class="fa-solid fa-leaf text-3xl text-amber-500"></i>
+        <h1 class="text-3xl font-bold tracking-widest">AFRIQUE CURA</h1>
+      </div>
+      <div class="hidden md:flex gap-10 text-lg">
+        <a href="#accueil" class="hover:text-amber-400 transition">Accueil</a>
+        <a href="#histoire" class="hover:text-amber-400 transition">Notre Histoire</a>
+        <a href="#menu" class="hover:text-amber-400 transition">Menu</a>
+        <a href="#experience" class="hover:text-amber-400 transition">L'Expérience</a>
+        <a href="#reserver" class="hover:text-amber-400 transition">Réserver</a>
+      </div>
+      <a href="#reserver" class="bg-amber-600 hover:bg-amber-500 px-8 py-3 rounded-full font-medium transition">Réserver une table</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="accueil" class="hero-bg h-screen flex items-center justify-center text-center pt-20">
+    <div class="max-w-4xl px-6">
+      <p class="text-amber-400 text-xl tracking-[4px] mb-4">PARIS 19ᵉ • 84 AV. DE FLANDRE</p>
+      <h1 class="text-7xl md:text-8xl font-bold leading-none mb-6">Afrique Cura</h1>
+      <p class="text-3xl md:text-4xl text-amber-100 mb-10">Saveurs d’Afrique de l’Ouest<br>dans un écrin parisien</p>
+      <div class="flex flex-col sm:flex-row gap-6 justify-center">
+        <a href="#reserver" class="bg-white text-zinc-900 px-10 py-5 rounded-2xl text-xl font-semibold hover:scale-105 transition">Réserver maintenant</a>
+        <a href="#menu" class="border border-white px-10 py-5 rounded-2xl text-xl font-semibold hover:bg-white hover:text-zinc-900 transition">Découvrir le menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIENVENUE -->
+  <section class="py-24 bg-zinc-900">
+    <div class="max-w-4xl mx-auto text-center px-6">
+      <h2 class="text-6xl font-bold text-amber-400 mb-8">BIENVENUE CHEZ AFRIQUE CURA</h2>
+      <p class="text-2xl leading-relaxed">Ici, on ne vient pas seulement manger.<br>On vient vivre un moment d’Afrique à Paris.</p>
+    </div>
+  </section>
+
+  <!-- NOTRE HISTOIRE -->
+  <section id="histoire" class="py-24 bg-black">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="section-title text-5xl font-bold text-center mb-16">Notre Histoire</h2>
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-xl leading-relaxed text-gray-300">Afrique Cura est né de la passion de transmettre les saveurs authentiques de l’Afrique de l’Ouest dans le vibrant 19ᵉ arrondissement de Paris.</p>
+        </div>
+        <div class="bg-zinc-800 p-8 rounded-3xl">
+          <p class="text-2xl">84 Avenue de Flandre<br>75019 Paris</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu" class="py-24 bg-zinc-900">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="section-title text-5xl font-bold text-center mb-16">Nos Plats Signature</h2>
+      <!-- Tu peux ajouter plus de plats ici plus tard -->
+    </div>
+  </section>
+
+  <!-- RÉSERVATION -->
+  <section id="reserver" class="py-24 bg-zinc-900">
+    <div class="max-w-2xl mx-auto px-6">
+      <h2 class="text-5xl font-bold text-center mb-12">Réservez votre table</h2>
+      <form class="space-y-6">
+        <button onclick="alert('Merci ! Réservation envoyée (simulation)')" 
+                class="w-full bg-amber-600 hover:bg-amber-500 py-6 rounded-3xl text-2xl font-semibold">Confirmer ma réservation</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black py-16 text-center">
+    <p class="text-3xl font-bold">AFRIQUE CURA</p>
+    <p class="text-gray-400">84 Avenue de Flandre • 75019 Paris</p>
+    <p class="text-xs text-gray-500 mt-10">© 2026 Afrique Cura</p>
+  </footer>
+</body>
+</html>
