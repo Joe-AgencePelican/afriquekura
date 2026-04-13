@@ -11,10 +11,10 @@
     body { font-family: 'Inter', sans-serif; }
     h1, h2 { font-family: 'Playfair Display', serif; }
     .hero-bg { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat; }
-    .glass { background: rgba(255,255,255,0.08); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.15); }
-    .animate-on-scroll { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.4, 0, 0.2, 1); }
+    .glass { background: rgba(255,255,255,0.08); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.15); }
+    .animate-on-scroll { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.4, 0, 0.2, 1); }
     .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
-    .dish-card { transition: all 0.5s ease; }
+    .dish-card { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
     .dish-card:hover { transform: scale(1.08) rotate(3deg); }
   </style>
 </head>
@@ -26,6 +26,8 @@
       <div class="flex items-center gap-3">
         <img src="logo.png" alt="Afrique Kura" class="h-12">
       </div>
+
+      <!-- Desktop -->
       <div class="hidden md:flex gap-10 text-lg font-medium">
         <a href="#accueil" class="hover:text-amber-400">Accueil</a>
         <a href="#histoire" class="hover:text-amber-400">Notre Histoire</a>
@@ -33,7 +35,24 @@
         <a href="#valeurs" class="hover:text-amber-400">Nos Valeurs</a>
         <a href="#experience" class="hover:text-amber-400">Votre Expérience</a>
       </div>
+
       <a href="#reserver" class="bg-amber-600 hover:bg-amber-500 px-8 py-3 rounded-full font-medium">Réserver une table</a>
+
+      <!-- Hamburger Mobile -->
+      <button id="hamburger" class="md:hidden text-3xl">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-zinc-900 border-t border-amber-900 py-6">
+      <div class="flex flex-col gap-6 text-center text-lg">
+        <a href="#accueil" class="hover:text-amber-400">Accueil</a>
+        <a href="#histoire" class="hover:text-amber-400">Notre Histoire</a>
+        <a href="#plats" class="hover:text-amber-400">Nos Plats</a>
+        <a href="#valeurs" class="hover:text-amber-400">Nos Valeurs</a>
+        <a href="#experience" class="hover:text-amber-400">Votre Expérience</a>
+      </div>
     </div>
   </nav>
 
@@ -86,14 +105,6 @@
     </div>
   </section>
 
-  <!-- VOTRE EXPÉRIENCE -->
-  <section id="experience" class="py-24 bg-zinc-900">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <h2 class="text-5xl font-bold text-amber-400 mb-16 animate-on-scroll">Votre Expérience</h2>
-      <p class="text-xl mb-12">Partagez vos photos et vidéos en direct</p>
-    </div>
-  </section>
-
   <footer class="bg-black py-16 text-center">
     <img src="logo.png" class="h-20 mx-auto mb-6">
     <p class="text-2xl">84 Avenue de Flandre • 75019 Paris</p>
@@ -108,6 +119,12 @@
       });
     });
     document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+    // Mobile menu
+    document.getElementById('hamburger').addEventListener('click', () => {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    });
   </script>
 </body>
 </html>
