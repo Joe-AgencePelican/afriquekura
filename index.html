@@ -10,15 +10,17 @@
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap');
     body { font-family: 'Inter', sans-serif; }
     h1, h2 { font-family: 'Playfair Display', serif; }
-    .hero-bg { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat; }
-    .dish-card { transition: all 0.4s ease; }
-    .dish-card:hover { transform: scale(1.08) rotate(3deg); }
+    .glass { background: rgba(255,255,255,0.08); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.15); }
+    .animate-on-scroll { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.4, 0, 0.2, 1); }
+    .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+    .dish-card { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+    .dish-card:hover { transform: scale(1.06) rotate(2deg); }
   </style>
 </head>
 <body class="bg-zinc-950 text-white">
 
   <!-- NAVBAR -->
-  <nav class="fixed top-0 w-full bg-zinc-950/90 backdrop-blur-md z-50 border-b border-amber-900">
+  <nav class="fixed top-0 w-full bg-zinc-950/95 backdrop-blur-md z-50 border-b border-amber-900">
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
       <div class="flex items-center gap-3">
         <img src="logo.png" alt="Afrique Kura" class="h-12">
@@ -27,7 +29,7 @@
         <a href="#accueil" class="hover:text-amber-400">Accueil</a>
         <a href="#histoire" class="hover:text-amber-400">Notre Histoire</a>
         <a href="#plats" class="hover:text-amber-400">Nos Plats</a>
-        <a href="#identite" class="hover:text-amber-400">Identité</a>
+        <a href="#valeurs" class="hover:text-amber-400">Nos Valeurs</a>
         <a href="#experience" class="hover:text-amber-400">Votre Expérience</a>
       </div>
       <a href="#reserver" class="bg-amber-600 hover:bg-amber-500 px-8 py-3 rounded-full font-medium">Réserver une table</a>
@@ -46,40 +48,49 @@
 
   <!-- HISTOIRE -->
   <section id="histoire" class="py-24 bg-black">
-    <div class="max-w-6xl mx-auto px-6 text-center">
+    <div class="max-w-6xl mx-auto px-6 text-center animate-on-scroll">
       <h2 class="text-5xl font-bold text-amber-400 mb-16">Notre Histoire</h2>
-      <p class="text-xl leading-relaxed max-w-3xl mx-auto">Afrique Kura est né du cœur d’une maman malienne qui transmet le vrai savoir-faire africain. Ingrédients frais du jour, recettes de famille, deux mamans en cuisine… Une cuisine authentique et généreuse.</p>
+      <p class="text-xl leading-relaxed max-w-3xl mx-auto">Afrique Kura est né du cœur d’une maman malienne qui a voulu transmettre le vrai savoir-faire africain à Paris. Chaque matin, les ingrédients sont frais et sélectionnés au marché. Deux mamans maliennes sont aux fourneaux : elles cuisinent avec amour, patience et les recettes de famille transmises de génération en génération.</p>
+    </div>
+  </section>
+
+  <!-- VALEURS -->
+  <section id="valeurs" class="py-24 bg-zinc-900">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-5xl font-bold text-amber-400 mb-16 animate-on-scroll">Nos Valeurs</h2>
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="glass p-8 rounded-3xl animate-on-scroll">🌿 Ingrédients frais du jour</div>
+        <div class="glass p-8 rounded-3xl animate-on-scroll">👵 Recettes de famille maliennes</div>
+        <div class="glass p-8 rounded-3xl animate-on-scroll">❤️ Authenticité & générosité</div>
+      </div>
     </div>
   </section>
 
   <!-- 10 PLATS SIGNATURE -->
-  <section id="plats" class="py-24 bg-zinc-900">
+  <section id="plats" class="py-24 bg-black">
     <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-5xl font-bold text-center mb-16 text-amber-400">Nos Plats Signature</h2>
+      <h2 class="text-5xl font-bold text-center mb-16 text-amber-400 animate-on-scroll">Nos Plats Signature</h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
-        <div class="dish-card bg-zinc-800 rounded-3xl overflow-hidden"><img src="https://i.imgur.com/Xhtmj.jpg" class="w-full h-64 object-cover"><div class="p-4 text-center">Pastels Maliens</div></div>
-        <div class="dish-card bg-zinc-800 rounded-3xl overflow-hidden"><img src="https://i.imgur.com/E8Jjw.jpg" class="w-full h-64 object-cover"><div class="p-4 text-center">Soupe de Mil</div></div>
-        <div class="dish-card bg-zinc-800 rounded-3xl overflow-hidden"><img src="https://i.imgur.com/rFHcy.jpg" class="w-full h-64 object-cover"><div class="p-4 text-center">Sauce Verte & Couscous</div></div>
-        <div class="dish-card bg-zinc-800 rounded-3xl overflow-hidden"><img src="https://i.imgur.com/HJSkp.jpg" class="w-full h-64 object-cover"><div class="p-4 text-center">Fufu & Fruits de Mer</div></div>
-        <div class="dish-card bg-zinc-800 rounded-3xl overflow-hidden"><img src="https://i.imgur.com/6H1JT.jpg" class="w-full h-64 object-cover"><div class="p-4 text-center">Poisson Grillé</div></div>
-        <div class="dish-card bg-zinc-800 rounded-3xl overflow-hidden"><img src="https://i.imgur.com/Btyzo.jpg" class="w-full h-64 object-cover"><div class="p-4 text-center">Viande Sautée</div></div>
-        <div class="dish-card bg-zinc-800 rounded-3xl overflow-hidden"><img src="https://i.imgur.com/eC5Bt.jpg" class="w-full h-64 object-cover"><div class="p-4 text-center">Niébé aux Oignons</div></div>
-        <div class="dish-card bg-zinc-800 rounded-3xl overflow-hidden"><img src="https://i.imgur.com/OqcYP.jpg" class="w-full h-64 object-cover"><div class="p-4 text-center">Curry de Bœuf</div></div>
-        <div class="dish-card bg-zinc-800 rounded-3xl overflow-hidden"><img src="https://i.imgur.com/dLHGO.jpg" class="w-full h-64 object-cover"><div class="p-4 text-center">Poulet Yassa</div></div>
-        <div class="dish-card bg-zinc-800 rounded-3xl overflow-hidden"><img src="https://i.imgur.com/VdOql.jpg" class="w-full h-64 object-cover"><div class="p-4 text-center">Brochettes Grillées</div></div>
+        <div class="dish-card glass rounded-3xl overflow-hidden animate-on-scroll"><img src="https://i.imgur.com/Xhtmj.jpg" class="w-full h-64 object-cover"><div class="p-4 text-center">Pastels Maliens</div></div>
+        <div class="dish-card glass rounded-3xl overflow-hidden animate-on-scroll"><img src="https://i.imgur.com/E8Jjw.jpg" class="w-full h-64 object-cover"><div class="p-4 text-center">Soupe de Mil</div></div>
+        <div class="dish-card glass rounded-3xl overflow-hidden animate-on-scroll"><img src="https://i.imgur.com/rFHcy.jpg" class="w-full h-64 object-cover"><div class="p-4 text-center">Sauce Verte & Couscous</div></div>
+        <div class="dish-card glass rounded-3xl overflow-hidden animate-on-scroll"><img src="https://i.imgur.com/HJSkp.jpg" class="w-full h-64 object-cover"><div class="p-4 text-center">Fufu & Fruits de Mer</div></div>
+        <div class="dish-card glass rounded-3xl overflow-hidden animate-on-scroll"><img src="https://i.imgur.com/6H1JT.jpg" class="w-full h-64 object-cover"><div class="p-4 text-center">Poisson Grillé</div></div>
+        <div class="dish-card glass rounded-3xl overflow-hidden animate-on-scroll"><img src="https://i.imgur.com/Btyzo.jpg" class="w-full h-64 object-cover"><div class="p-4 text-center">Viande Sautée</div></div>
+        <div class="dish-card glass rounded-3xl overflow-hidden animate-on-scroll"><img src="https://i.imgur.com/eC5Bt.jpg" class="w-full h-64 object-cover"><div class="p-4 text-center">Niébé aux Oignons</div></div>
+        <div class="dish-card glass rounded-3xl overflow-hidden animate-on-scroll"><img src="https://i.imgur.com/OqcYP.jpg" class="w-full h-64 object-cover"><div class="p-4 text-center">Curry de Bœuf</div></div>
+        <div class="dish-card glass rounded-3xl overflow-hidden animate-on-scroll"><img src="https://i.imgur.com/dLHGO.jpg" class="w-full h-64 object-cover"><div class="p-4 text-center">Poulet Yassa</div></div>
+        <div class="dish-card glass rounded-3xl overflow-hidden animate-on-scroll"><img src="https://i.imgur.com/VdOql.jpg" class="w-full h-64 object-cover"><div class="p-4 text-center">Brochettes Grillées</div></div>
       </div>
     </div>
   </section>
 
-  <!-- IDENTITÉ VISUELLE -->
-  <section id="identite" class="py-24 bg-black">
+  <!-- VOTRE EXPÉRIENCE -->
+  <section id="experience" class="py-24 bg-zinc-900">
     <div class="max-w-7xl mx-auto px-6 text-center">
-      <h2 class="text-5xl font-bold text-amber-400 mb-16">Notre Identité Visuelle</h2>
-      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        <img src="logo.png" class="rounded-3xl shadow-2xl">
-        <img src="logo.png" class="rounded-3xl shadow-2xl">
-        <img src="logo.png" class="rounded-3xl shadow-2xl">
-      </div>
+      <h2 class="text-5xl font-bold text-amber-400 mb-16 animate-on-scroll">Votre Expérience</h2>
+      <p class="text-xl mb-12">Partagez vos photos et vidéos en direct</p>
+      <!-- Tu peux ajouter le formulaire Tally ici si tu veux -->
     </div>
   </section>
 
@@ -88,5 +99,15 @@
     <p class="text-2xl">84 Avenue de Flandre • 75019 Paris</p>
     <p class="mt-2 text-amber-400">07 58 43 54 59 • 01 71 20 90 07</p>
   </footer>
+
+  <script>
+    // Animation au scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
